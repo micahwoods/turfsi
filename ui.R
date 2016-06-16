@@ -14,7 +14,8 @@ shinyUI(fluidPage(
   
   HTML("<p>The sustainability index (SI) is a comparison of a soil test value to the distribution
           of that element in soils that produce good turfgrass. In the MLSN project, we've studied
-         thousands of soil test results from soils that produce good performing turf. The SI is a 
+         thousands of Mehlich 3 soil test results from soils that produce good performing turf. 
+         The SI is a 
          simple way to compare your soil nutrient levels to the distribution of soil nutrient levels 
          in the MLSN project.</p>
 
@@ -22,8 +23,8 @@ shinyUI(fluidPage(
           represents the proportion
           of turfgrass soils having values larger than the given soil test value. A low SI means 
           there are few soils with higher concentrations of that nutrient. </p>
-        <p> Change these soil test input values to show the SI for 
-            soil test results of your choice. When the soil is at
+        <p> Change these input values to show the SI for 
+            Mehlich 3 soil test results of your choice. When the soil is at
            the MLSN guideline level, the SI is 0.9. More details at bottom.
           </p>"),
 
