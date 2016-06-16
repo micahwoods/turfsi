@@ -71,7 +71,8 @@ shinyUI(fluidPage(
     
   ),
   hr(),
-  helpText(HTML(paste("We define the sustainability index as 1 - the cumulative distribution function 
+  helpText(HTML(paste("<p>We define the sustainability index as 1 minus the cumulative distribution 
+            function 
             evaluated at the given soil test value, for a 2 parameter log logistic distribution
             based on the MLSN data. For more information, see the data and the distribution
             fitting procedure in ",
@@ -80,8 +81,23 @@ shinyUI(fluidPage(
                  ". The code to make this ShinyApp is in the ",
                  a("turfsi", 
                    href = "https://github.com/micahwoods/turfsi"),
-                 " repository.", sep = "")
-  ))
+                 " repository.</p>",
+                 "<p>This is a joint project of ",
+                 a("PACE Turf ",
+                   href = "http://www.paceturf.org"),
+                  "and the ",
+                 a("Asian Turfgrass Center.",
+                   href = "http://www.asianturfgrass.com"),
+                 sep = "")
+  )),
+  
+  br(), 
+  br(),
+  
+  a(href = "http://www.paceturf.org", 
+    img(src = "pace.png", width = 130)),
+  a(href = "http://www.asianturfgrass.com", 
+    img(src = "atc.png", height = 85, width = 85))
 
 )
 )
