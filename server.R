@@ -71,12 +71,11 @@ ecdfPlot <- function(zed, xLabInput, scale, shape, maxGSS, mlsn, userPPM) {
   maxValu <- ifelse(userPPM <= maxGSS, maxGSS, userPPM)
   
   siLabelX <- ifelse(userPPM >= maxValu - 20, userPPM - 0.08 * maxValu,
-                     userPPM + 0.08 * maxValu)
+                     ifelse(userPPM < mlsn, userPPM,
+                            userPPM + 0.08 * maxValu))
   
-  siLabelY <- ifelse(userPPM <= mlsn, sIndex + 0.1,
-                     sIndex - 0.1)
-  
-  
+  siLabelY <- ifelse(userPPM < mlsn, sIndex + 0.1,
+                     sIndex - 0.05)
   
   # makes a plot
   
@@ -92,7 +91,8 @@ ecdfPlot <- function(zed, xLabInput, scale, shape, maxGSS, mlsn, userPPM) {
     annotate("text", colour = "#1b9e77", label = "MLSN",
              x = mlsn + 0.08 * maxValu, y = 0.95) +
     annotate("text", colour = "#d95f02", label = paste("SI =", 
-                                                       formatC(sIndex, digits = 2)),
+                                                       formatC(sIndex, digits = 2,
+                                                                 format = "f")),
              x = siLabelX, y = siLabelY)
 }
 
@@ -104,7 +104,7 @@ shinyServer(function(input, output) {
   p <-  ecdfPlot(input$phosphorus, "P (mg", 55.07, 2.23, 300, 21, input$phosphorus)
   ca <-   ecdfPlot(input$calcium, "Ca (mg", 548.13, 4.85, 1000, 348, input$calcium)
   mg <-   ecdfPlot(input$magnesium, "Mg (mg", 83.17, 3.83, 300, 47, input$magnesium)
-  s <-   ecdfPlot(input$sulfur, "S (mg", 19.37, 2.3, 100, 7, input$sulfur)
+  s <-   ecdfPlot(input$sulfur, "S (mg", 19.366119, 2.299949, 100, 7, input$sulfur)
   
   multiplot(k, p, ca, mg, s, cols = 2)
     
