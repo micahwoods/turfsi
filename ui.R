@@ -21,11 +21,16 @@ shinyUI(fluidPage(
 
           <p>The numerical value of SI 
           represents the proportion
-          of turfgrass soils having values larger than the given soil test value. A low SI means 
-          there are few soils with higher concentrations of that nutrient. </p>
+          of turfgrass soils having values smaller than the given soil test value. A low SI means 
+          there are relatively few soils with lower concentrations of that nutrient. For example, with an SI of 0.07,
+          one can expect 7% of soils producing good turf to have nutrient levels below that value, and 93% to be above it.
+          When the SI is 0.5, 
+          one can expect half the soils producing good turf to have nutrient levels less than the given soil test value. 
+          When the SI is 0.97, one can expect 97% of the soils producing good turf to be doing so with nutrient levels
+          below the given soil test value. </p>
         <p> Change these input values to show the SI for 
             Mehlich 3 soil test results of your choice. When the soil is at
-           the MLSN guideline level, the SI is 0.9. More details at bottom.
+           the MLSN guideline level, the SI is 0.1. More details at bottom.
           </p>"),
 
 
