@@ -93,7 +93,7 @@ ecdfPlot <- function(zed, xLabInput, scale, shape, maxGSS, mlsn, userPPM) {
     annotate("text", colour = "#1b9e77", label = "MLSN",
              x = mlsn + 0.08 * maxValu, y = 0.95) +
     annotate("text", colour = "#d95f02", label = paste("SI =", 
-                                                       formatC(1 - sIndex, digits = 2,
+                                                       formatC(sIndex, digits = 2,
                                                                  format = "f")),
              x = siLabelX, y = 0.1)
 }

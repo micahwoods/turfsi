@@ -72,7 +72,7 @@ shinyUI(fluidPage(
     
   ),
   hr(),
-  helpText(HTML(paste("<p>We define the sustainability index as 1 minus the cumulative distribution 
+  helpText(HTML(paste("<p>We define the sustainability index as the cumulative distribution 
             function 
             evaluated at the given soil test value, for a 2 parameter log logistic distribution
             based on the MLSN data. For more information, see the data and the distribution
